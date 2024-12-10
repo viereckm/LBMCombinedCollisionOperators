@@ -1,0 +1,47 @@
+DomainSetup
+{
+    blocks          < 1, 1, 1 >;
+    cellsPerBlock   < 1000, 160, 1 >;
+    periodic        < 0, 0, 1 >;
+}
+
+Parameters
+{
+    Re          10;
+    // omega       calculated in simulation;       
+    uMax_l      0.1;
+    D_l         20;
+    timeScaling 5;
+
+    resultDir   /results/BreuerGuoNx1000Ny160Re10uMax10;
+
+    remainingTimeLoggerFrequency 300; // [s]
+    numberOfSnapshots 400;    
+}
+
+Boundaries
+{
+    Border { direction N, S;    walldistance -1;    flag NoSlip; }
+    Border { direction W;       walldistance -1;    flag InflowFunc; }
+    Border { direction E;       walldistance -1;    flag SEO; }
+
+    Body
+    {
+        shape box;
+
+        // Box dimension is 20 x 20
+        /*
+        xBegin  166;    // Nx / 3
+        yBegin  35;     // Ny / 2 - D_L / 2  
+        zBegin  0;      
+        xEnd    175;    // Nx / 3 + D_l - 1
+        yEnd    44;     // Ny / 2 + D_l / 2
+        zEnd    1;
+        */
+
+        min < 333, 70, 0 >; // must be < Nx/3, Ny/2 - D_l/2, 0 >
+        max < 352, 89, 1 >; // must be < Nx/3 + D_l - 1, Ny/2 + D_l/2, 1 > 
+
+        flag Obstacle;
+    }
+}

@@ -1,0 +1,37 @@
+DomainSetup
+{
+    blocks          < 1, 1, 1 >;
+    cellsPerBlock   < 8401, 1344, 1 >;
+    periodic        < 0, 0, 1 >;
+}
+
+Parameters
+{
+    Re          150;
+    omega       1.2;
+    uMax_l      0.0992063;
+    D_l         168;
+    nu_l        0.111111;
+    timeScaling 5;
+
+    resultDir   /results/BreuerGuoRe150omega12uMax10;
+
+remainingTimeLoggerFrequency    300; // [s]
+numberOfSnapshots               400;
+}
+
+Boundaries
+{
+    Border { direction N, S;    walldistance -1;    flag NoSlip; }
+    Border { direction W;       walldistance -1;    flag InflowFunc; }
+    Border { direction E;       walldistance -1;    flag SEO; }
+
+    Body
+    {
+        shape box;
+
+        min < 2800, 588, 0 >;
+        max < 2968, 755, 1 >;
+
+        flag Obstacle;    }
+}
