@@ -34,7 +34,7 @@ pip install matplotlib
 ## Running the benchmark
 
 ### Coarse grid validation (reccommended)
-To run the simulation on the two grids that are similar t the ones used in [reference literature](./referenceLiterature/), just type 
+To run the simulation on the two grids that are similar to the ones used in [reference literature](./referenceLiterature/), just type 
 
 ```
 ./runCoarseGrids.sh
