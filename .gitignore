@@ -1,0 +1,56 @@
+# Do NOT track build directory
+build/
+walberla/
+
+# Do not track python caches
+__pycache__/
+
+# Do NOT track virtual Python environment
+.venv*/
+
+### C++ specific ignores ###
+# Prerequisites
+*.d 
+
+# Compiled object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Compiled dynamic libraries
+*.so 
+*.dylib
+*.dll
+
+# Compiled static libraries
+*.lai 
+*.la 
+*.a 
+*.lib 
+
+# Execuables
+*.exe 
+*.out
+*.app
+
+### CMAKE specific ignores ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake 
+install_manifest.txt 
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# External projects:
+*-prefix/
+
