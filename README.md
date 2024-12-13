@@ -95,3 +95,4 @@ To reproduce plots from the thesis, run the respective postprocessing script (st
 python3 parameterStudy.py
 ```
 
+Again, plots will be saved [here](./figures/).
